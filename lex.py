@@ -7,11 +7,12 @@ import sys
 from collections import OrderedDict
 
 inFile = sys.argv[1]
-outFile = sys.argv[2]
 
 reservadas = ["module","box","input","output","t_signal","p_signal","var","initially","up","activate","on_exception","emit"]
 operadores = ["===>","--->","=",">","<",">=","<=","+","-","&"]
 separadores = ["[","]",",",":","#","(",")","."]
+
+arq = open("output.txt","wb")
 
 with open(inFile,'r') as f:
 	palavra = []
@@ -85,11 +86,18 @@ with open(inFile,'r') as f:
 	for t in tokens: 
 		if t in reservada:
 			print t + " - palavra reservada"
+			arq.write(t + " - palavra reservada\n")
 		elif t in indicador:
 			print t + " - indicador"
+			arq.write(t + " - indicador\n")
 		elif t in separador:
 			print t + " - separador"
+			arq.write(t + " - separador\n")
 		elif t in digito:
 			print t + " - constante numérica"
+			arq.write(t + " - constante numérica\n")
 		else:
 			print t + " - operador"
+			arq.write(t + " - operador\n")
+
+arq.close()
