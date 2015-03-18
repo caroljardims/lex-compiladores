@@ -10,7 +10,7 @@ inFile = sys.argv[1]
 outFile = sys.argv[2]
 
 reservadas = ["module","box","input","output","t_signal","p_signal","var","initially","up","activate","on_exception","emit"]
-operadores = ["===>","--->","=",">","<",">=","<=","+","-"]
+operadores = ["===>","--->","=",">","<",">=","<=","+","-","&"]
 separadores = ["[","]",",",":","#","(",")","."]
 
 with open(inFile,'r') as f:
@@ -19,6 +19,7 @@ with open(inFile,'r') as f:
 	separador = []
 	operador = []
 	indicador = []
+	digito = []
 	lista = []
 	tokens = []
 	row = 1
@@ -73,6 +74,9 @@ with open(inFile,'r') as f:
 		for o in indicador:
 			if o == "":
 				indicador.remove(o)
+			if o.isdigit():
+				digito.append(o)
+				indicador.remove(o)
 		for t in tokens:
 			if t == "":
 				tokens.remove(t)
@@ -85,5 +89,7 @@ with open(inFile,'r') as f:
 			print t + " - indicador"
 		elif t in separador:
 			print t + " - separador"
+		elif t in digito:
+			print t + " - constante numérica"
 		else:
 			print t + " - operador"
