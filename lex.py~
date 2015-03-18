@@ -1,0 +1,14 @@
+#!/usr/bin/python
+# -*- coding: iso-8859-1 -*-
+
+# run this as > $ python lex.py input.txt
+
+import sys
+
+inFile = sys.argv[1]
+
+with open(inFile,'r') as i:
+	while True:
+		line = i.readline()
+		print line
+		if not line: break
