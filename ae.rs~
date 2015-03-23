@@ -7,7 +7,7 @@ rs_prog ae_central:
 
   output : [carro_autorizado, velocidade_para_carros(X),
             troque_pista(W)],
- * 
+
   module carro_na_pista:
   [ input  :  [carro_entrou, autoriza_car],
     output :  [carro_autorizado, ajuste_veloc],
