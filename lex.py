@@ -81,6 +81,9 @@ def gera_tokens(inFile):
 									break
 						if erro:
 							palavra = "".join(palavra)
+							arq.write("possui erro na linha " + str(row) + " coluna " + str(col-len(palavra)) + "\n")
+							arq.write(" > " + palavra)
+							arq.close()
 							print "possui erro na linha ",row, " coluna ",col-len(palavra)
 							print palavra
 							exit()
@@ -131,6 +134,8 @@ def gera_tokens(inFile):
 			for w in i:
 				if not w.isdigit() and not w.isalpha() and not w == "_":
 					print "Erro: \"" + w + "\" não é reconhecido nesta linguagem"
+					arq.write("Erro: \"" + w + "\" não é reconhecido nesta linguagem\n")
+					arq.close()
 					exit()
 		
 

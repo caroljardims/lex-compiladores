@@ -25,10 +25,9 @@ rs_prog login:
     t_signal:[],
     p_signal: [],
     var     : [count],
-
     initially: [count := 0, activate(rules)],
     on_exception:[],
-
+ ~
     checkLogin(X,Y) ===> case
                         [ user(X,Y) ---> [count:=0, emit(goodLogin)],
                           count>=2  ---> [emit(tooManyAttempts)],
