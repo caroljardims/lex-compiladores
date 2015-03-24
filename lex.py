@@ -9,8 +9,8 @@ from collections import OrderedDict
 inFile = sys.argv[1]
 
 reservadas = ["module","box","input","output","t_signal","p_signal","var","initially","up","activate","on_exception","emit"]
-operadores = ["===>","--->","=",">","<",">=","<=","+","-","&"]
-separadores = ["[","]",",",":","#","(",")","."]
+operadores = ["===>","--->","=",">","<",">=","<=","+","-","&","/"]
+separadores = ["[","]",",",":","#","(",")",".","\'"]
 
 def gera_tokens(inFile):
 	arq = open("output.txt","wb")
@@ -59,9 +59,7 @@ def gera_tokens(inFile):
 							print "Erro: comentário não fecha. Linha " + str(row) + " coluna " + str(col)
 							exit()
 				else:
-					print "possui erro na linha ",row, " coluna ", col-1
-					exit()
-
+					operador.append("/")
 			else:
 				if caracter != " " and caracter != "\n" and caracter != "\r":
 					palavra.append(caracter)
@@ -78,7 +76,7 @@ def gera_tokens(inFile):
 								erro=True
 								break
 							if not palavra in separadores:
-								if not a.isalpha() and not a.isdigit and not a == "_":
+								if not a.isalpha() and not a.isdigit and not a == "_" and not a in operadores:
 									erro = True
 									break
 						if erro:
@@ -102,7 +100,6 @@ def gera_tokens(inFile):
 					separador.append(d)
 					word = [w.replace(d, "|") for w in word]
 			for d in operadores:
-				if d in word:
 					tokens.append(d)
 					operador.append(d)
 					word = [w.replace(d, "|") for w in word]
@@ -143,7 +140,7 @@ def gera_tokens(inFile):
 		#		print t + " - palavra reservada"
 				arq.write(t + " - palavra reservada\n")
 			elif t in indicador:
-				print t + " - indicador"
+		#		print t + " - indicador"
 				arq.write(t + " - indicador\n")
 			elif t in separador:
 		#		print t + " - separador"
@@ -151,14 +148,17 @@ def gera_tokens(inFile):
 			elif t in digito:
 		#		print t + " - constante numérica"
 				arq.write(t + " - constante numérica\n")
-			else:
+			elif t in operador:
 		#		print t + " - operador"
 				arq.write(t + " - operador\n")
+			else:
+				print t
+				arq.write(t)
 
 	arq.close()
-	return reservada,indicador,separador,digito,operador,comentario
+	return tokens
 
-r,i,s,d,o,c = gera_tokens(inFile)
+tokens = gera_tokens(inFile)
 
 def verifica_codigo(inFile):
 	with open(inFile,'r') as f:

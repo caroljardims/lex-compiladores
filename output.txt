@@ -1,0 +1,60 @@
+===> - operador
+---> - operador
+= - operador
+> - operador
+< - operador
+>= - operador
+<= - operador
++ - operador
+- - operador
+& - operador
+/ - operador
+rs_prog - indicador
+: - separador
+login - indicador
+[ - separador
+input - palavra reservada
+, - separador
+( - separador
+) - separador
+X - indicador
+] - separador
+password - indicador
+output - palavra reservada
+loginUnsuccessful - indicador
+module - palavra reservada
+get_login - indicador
+goodLogin - indicador
+badLogin - indicador
+tooManyAttempts - indicador
+checkLogin - indicador
+Y - indicador
+t_signal - palavra reservada
+p_signal - palavra reservada
+gotPassword - indicador
+var - palavra reservada
+initially - palavra reservada
+' - separador
+write - indicador
+Enter - indicador
+name - indicador
+and - indicador
+activate - palavra reservada
+on_exception - palavra reservada
+gotName - indicador
+# - separador
+loginSuccessful - indicador
+Please - indicador
+repeat - indicador
+check_login - indicador
+0 - constante numérica
+case - indicador
+user - indicador
+emit - palavra reservada
+count - indicador
+2 - constante numérica
+else - indicador
+1 - constante numérica
+. - separador
+aaa - indicador
+bbb - indicador
