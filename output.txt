@@ -1,1 +1,81 @@
-Erro: "~" não é reconhecido nesta linguagem
+===> - operador
+---> - operador
+= - operador
+> - operador
+< - operador
+>= - operador
+<= - operador
++ - operador
+- - operador
+& - operador
+/ - operador
+rs_prog - indicador
+: - separador
+podos - indicador
+[ - separador
+input - palavra reservada
+, - separador
+start_button - indicador
+stop_button - indicador
+heart_button - indicador
+veloc_button - indicador
+distance_button - indicador
+( - separador
+) - separador
+acel - indicador
+pulso - indicador
+sec - indicador
+] - separador
+output - palavra reservada
+display_heart - indicador
+display_veloc - indicador
+display_distance - indicador
+module - palavra reservada
+keyboard_module - indicador
+cmd_heart - indicador
+cmd_veloc - indicador
+cmd_distance - indicador
+start_system - indicador
+stop_system - indicador
+t_signal - palavra reservada
+p_signal - palavra reservada
+var - palavra reservada
+initially - palavra reservada
+activate - palavra reservada
+on_exception - palavra reservada
+control_module - indicador
+start_pulsacao - indicador
+start_integrator - indicador
+stop_pulsacao - indicador
+stop_integrator - indicador
+cmd_pulsacao - indicador
+cmd_integrator - indicador
+cmd_velocity - indicador
+rules - indicador
+emit - palavra reservada
+pulsacao_module - indicador
+batimentos - indicador
+box_initial - indicador
+box - palavra reservada
+box_operation - indicador
+bat_sec - indicador
+0 - constante numérica
+1 - constante numérica
+integrator_module - indicador
+p2 - indicador
+p3 - indicador
+p4 - indicador
+acel_ant - indicador
+vel_result - indicador
+vel_ant - indicador
+dist_result - indicador
+dist_ant - indicador
+dist - indicador
+box_integrator - indicador
+up - palavra reservada
+# - separador
+p1 - indicador
+acel_result - indicador
+. - separador
+environment - indicador
+user_terminal - indicador
